@@ -6,7 +6,7 @@ package com.liferay.convert.tools.migrate;
 public abstract class BaseReplacement {
 
     protected abstract void replacement(
-            String sourceFileName, String targetFileName, String newFileName, boolean isEnableLog)
+            String sourceFileName, String targetFileName, String newFileName)
         throws Exception;
 
     protected String getType() {
@@ -30,7 +30,7 @@ public abstract class BaseReplacement {
 
     // The default type to database for while is mysql
 
-    private static final String _DEFAULT_TYPE = "mysql";
+    private static final String _DEFAULT_TYPE = "mysql:5.7";
 
     // attributes variables
 
