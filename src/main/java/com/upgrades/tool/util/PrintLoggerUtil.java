@@ -1,6 +1,7 @@
-package com.liferay.convert.tools.util;
+package com.upgrades.tool.util;
 
 import java.time.Instant;
+import java.util.Arrays;
 import java.util.regex.Pattern;
 
 /**
@@ -12,19 +13,19 @@ public class PrintLoggerUtil {
         _print(_GREEN, word);
     }
 
-    public static void printError(String word, String cause) {
+    public static void printError(String word, String ...cause) {
         if (cause == null) {
             _print(_RED, word);
         }
         else {
-            _print(_RED, word + _BREAK_LINE +  cause);
+            _print(_RED, word + _BREAK_LINE + Arrays.toString(cause));
         }
     }
 
     public static void printReplacement(
             String oldContent, String newContent, Pattern pattern) {
 
-        System.out.println("Apply pattern " + pattern.pattern());
+        System.out.println("Applying pattern " + pattern.pattern());
 
         System.out.println(
                 "Replace\n" + _LIGHT_BLUE + oldContent + _RESET +
